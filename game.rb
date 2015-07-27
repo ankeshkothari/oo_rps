@@ -29,7 +29,14 @@ class Compare_hands
   end
 
   def win?
-    puts "#{player_hand} and #{computer_hand}"
+    if player_hand == computer_hand
+      puts "It's a tie!"
+    elsif (player_hand == "r" && computer_hand == "s") || (player_hand == "p" && computer_hand == "r") || (player_hand == "s" && computer_hand == "p")
+      puts "You win"
+    else
+      puts "You lost"
+    end
+          
   end
 
 end
