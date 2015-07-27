@@ -1,4 +1,14 @@
-#Player and computer each select R P S. We compare who wins.
+# Player and computer each select R P S. We compare who wins.
+
+class Play_again
+  def initialize
+    puts "Press P to play again. Any other key to exit."
+    play_key = gets.chomp.downcase
+    if play_key == "p"
+      Game.new.play
+    end
+  end
+end
 
 class Player
  def hand
@@ -32,8 +42,24 @@ class Compare_hands
     if player_hand == computer_hand
       puts "It's a tie!"
     elsif (player_hand == "r" && computer_hand == "s") || (player_hand == "p" && computer_hand == "r") || (player_hand == "s" && computer_hand == "p")
+      if player_hand == "r"
+        puts "Rock beats Scissors"
+      elsif player_hand == "p"
+        puts "Paper wraps Rock"
+      elsif player_hand == "s"
+        puts "Scissors cut Paper"
+      end  
+          
       puts "You win"
     else
+      if player_hand == "r"
+        puts "Rock beats Scissors"
+      elsif player_hand == "p"
+        puts "Paper wraps Rock"
+      elsif player_hand == "s"
+        puts "Scissors cut Paper"
+      end  
+
       puts "You lost"
     end
           
@@ -54,6 +80,7 @@ class Game
     computer_hand = Computer.new.hand
     compare = Compare_hands.new(player_hand, computer_hand)
     compare.win?
+    Play_again.new
   end
 end
 
