@@ -51,13 +51,14 @@ class Compare_hands
       end  
           
       puts "You win"
+
     else
       if player_hand == "r"
-        puts "Rock beats Scissors"
-      elsif player_hand == "p"
         puts "Paper wraps Rock"
-      elsif player_hand == "s"
+      elsif player_hand == "p"
         puts "Scissors cut Paper"
+      elsif player_hand == "s"
+        puts "Rock beats Scissors"
       end  
 
       puts "You lost"
